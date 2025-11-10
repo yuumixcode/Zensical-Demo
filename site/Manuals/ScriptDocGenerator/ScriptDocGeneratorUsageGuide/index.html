@@ -12,10 +12,10 @@
         <meta name="author" content="Yuumix">
       
       
-        <link rel="canonical" href="https://www.odintoolkits.cn/Manuals/ScriptDocGenerator/ScriptDocGenerator%20%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">
+        <link rel="canonical" href="https://www.odintoolkits.cn/Manuals/ScriptDocGenerator/ScriptDocGeneratorUsageGuide/">
       
       
-        <link rel="prev" href="../../../%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/CHANGELOG/">
+        <link rel="prev" href="../../../Instructions/CHANGELOG/">
       
       
       
@@ -90,11 +90,17 @@
     
     
       
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+Meroitic:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans Meroitic";--md-code-font:"JetBrains Mono"}</style>
+      
     
     
       <link rel="stylesheet" href="../../../assets/stylesheets/zensical-official-extra.css">
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/fonts.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/readthedocs.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -137,7 +143,7 @@
   <nav class="md-header__inner md-grid" aria-label="页眉">
     <a href="../../.." title="Odin Toolkits" class="md-header__button md-logo" aria-label="Odin Toolkits" data-md-component="logo">
       
-  <img src="../../../assets/zensical.svg" alt="logo">
+  <img src="https://cdn.jsdelivr.net/gh/yuumixcode/OdinToolkitsDocumentation@main/cdn-assets/logo-color-noshadow.webp" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -318,7 +324,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Odin Toolkits" class="md-nav__button md-logo" aria-label="Odin Toolkits" data-md-component="logo">
       
-  <img src="../../../assets/zensical.svg" alt="logo">
+  <img src="https://cdn.jsdelivr.net/gh/yuumixcode/OdinToolkitsDocumentation@main/cdn-assets/logo-color-noshadow.webp" alt="logo">
 
     </a>
     Odin Toolkits
@@ -416,7 +422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/CHANGELOG/" class="md-nav__link">
+      <a href="../../../Instructions/CHANGELOG/" class="md-nav__link">
         
   
   
@@ -1369,32 +1375,22 @@
               <article class="md-content__inner md-typeset">
                 
                   
-  
-  
-    
-      
-    
-    <a href="https://github.com/yuumixcode/OdinToolkits-For-Unity/raw/main/docs/Manuals/ScriptDocGenerator/ScriptDocGenerator 使用指南.md" title="查看本页的源代码" class="md-content__button md-icon">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-file-code-2" viewBox="0 0 24 24"><path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"/><path d="M14 2v4a2 2 0 0 0 2 2h4M5 12l-3 3 3 3M9 18l3-3-3-3"/></svg>
-    </a>
-  
 
-
-<h1 id="script-doc-generator">Script Doc Generator 使用指南<a class="headerlink" href="#script-doc-generator" title="Permanent link">&para;</a></h1>
-<h2 id="_1">工具简介<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h1 id="script-doc-generator">Script Doc Generator 使用指南</h1>
+<h2 id="_1">工具简介</h2>
 <p>Script Doc Generator 是 Odin Toolkits For Unity 的核心模块之一，用于快捷生成代码注释文档。</p>
-<h3 id="_2">核心特性<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_2">核心特性</h3>
 <ul>
 <li>支持单个类型、多个类型或整个程序集的文档批量生成。</li>
 <li>支持脚本文档增量生成，默认保留文档中 “## 额外说明” 后的内容，不覆盖生成。</li>
 <li>支持分析源代码中声明的类，以及类包含的构造函数、方法、事件、属性、字段。</li>
 </ul>
-<h2 id="_3">开始使用<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h3 id="_4">源代码要求<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h2 id="_3">开始使用</h2>
+<h3 id="_4">源代码要求</h3>
 <p>Script Doc Generator 主要依靠 <code>Reflection</code> 反射。注释采用的是读取 <code>[Summary("xxx")]</code> 的值的方案。因此，要求源代码中给需要生成注释的成员添加 <code>[Summary]</code> 。</p>
-<p><img src="./ScriptDocGenerator 使用指南.assets/Summary源代码演示.png" alt="Summary源代码演示" style="zoom:50%;" /></p>
-<h4 id="summaryprocessormenuitems">SummaryProcessorMenuItems<a class="headerlink" href="#summaryprocessormenuitems" title="Permanent link">&para;</a></h4>
+<p><img src="../ScriptDocGenerator 使用指南.assets/Summary源代码演示.png" alt="Summary源代码演示" style="zoom:50%;" /><br /></p>
+
+<h4 id="summaryprocessormenuitems">SummaryProcessorMenuItems</h4>
 <p>为了更方便地使用工具，设计了 <code>SummaryProcessorMenuItems</code> 右键菜单。</p>
 <p>提供了三个右键选项，当选择的资源中包含脚本文件时，可以选择执行。</p>
 <ol>
@@ -1402,32 +1398,32 @@
 <li>Replace SummaryAttribute。读取 XML 注释中的 <code>&lt;summary&gt;</code> 内容，删除 XML 的 <code>&lt;summary&gt;</code> 内容，然后添加 <code>[Summary("xxx")]</code> 特性到成员上方。</li>
 <li>Remove SummaryAttribute。移除选择的脚本源代码中的 <code>[Summary("xxx")]</code> 特性。</li>
 </ol>
-<p><img src="./ScriptDocGenerator 使用指南.assets/右键菜单 Summary.png" alt="右键菜单 Summary" style="zoom:55%;" /></p>
+<p><img src="../ScriptDocGenerator 使用指南.assets/右键菜单 Summary.png" alt="右键菜单 Summary" style="zoom:55%;" /></p>
 <p>为了正确添加 <code>[Summary]</code> 特性，在执行操作前，推荐使用 IDE 对代码进行格式化。最好设置为特性和成员永不在同一行，以 Rider 举例。</p>
-<p><img src="./ScriptDocGenerator 使用指南.assets/Rider设置特性永不在同一行.png" alt="Rider设置特性永不在同一行" style="zoom:40%;" /></p>
-<h3 id="_5">打开工具面板<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><img src="../ScriptDocGenerator 使用指南.assets/Rider设置特性永不在同一行.png" alt="Rider设置特性永不在同一行" style="zoom:40%;" /></p>
+<h3 id="_5">打开工具面板</h3>
 <p>通过 Unity 编辑器菜单打开：Tools/Odin Toolkits/Script Doc Generator。</p>
-<p><img src="./ScriptDocGenerator 使用指南.assets/ScriptDocGenerator菜单路径图.png" style="zoom:60%;" /></p>
-<p><img src="./ScriptDocGenerator 使用指南.assets/脚本文档生成器菜单图.png" alt="脚本文档生成器菜单路径" style="zoom:40%;" /></p>
-<h3 id="_6">设置文档保存路径<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p><img src="../ScriptDocGenerator 使用指南.assets/ScriptDocGenerator菜单路径图.png" style="zoom:60%;" /></p>
+<p><img src="../ScriptDocGenerator 使用指南.assets/脚本文档生成器菜单图.png" alt="脚本文档生成器菜单路径" style="zoom:40%;" /></p>
+<h3 id="_6">设置文档保存路径</h3>
 <p>在工具窗口的 “存放脚本文档的目标文件夹路径” 输入框中，设置文档导出根目录</p>
 <ul>
 <li>支持绝对路径输入</li>
 <li>支持拖拽文件夹到输入框快速设置</li>
 <li>若路径不存在，生成时会提示自动创建文件夹</li>
 </ul>
-<p><img src="./ScriptDocGenerator 使用指南.assets/自动路径补全提示.png" style="zoom:40%;" /></p>
-<h3 id="_7">文档生成器设置<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>&lt;img src="&lt;\&lt;/\&lt;../ScriptDocGenerator 使用指南.assets/自动路径补全提示.png/&gt;&gt;&gt;" style="zoom:40%;" /&gt;</p>
+<h3 id="_7">文档生成器设置</h3>
 <p>默认提供中文 API 文档生成器 <code>CnAPIDocGeneratorSettingSO</code>，可生成包含中文注释的 Markdown 文档。</p>
 <p>如需自定义文档格式，声明一个继承自 <code>DocGeneratorSettingSO</code> 的类，实现 <code>GetGeneratedDoc</code> 方法，生成 SO 资源文件并更换文档生成设置资源文件。</p>
-<h4 id="docgeneratorsettingso">DocGeneratorSettingSO<a class="headerlink" href="#docgeneratorsettingso" title="Permanent link">&para;</a></h4>
+<h4 id="docgeneratorsettingso">DocGeneratorSettingSO</h4>
 <ol>
 <li>是否按命名空间生成文件夹</li>
 <li>是否使用自定义文档扩展名</li>
 <li>文档扩展名设置</li>
 <li>是否自动生成增量标识符</li>
 </ol>
-<h4 id="api-docgeneratorsettingso">中文 API 脚本文档结构（默认提供的 DocGeneratorSettingSO）<a class="headerlink" href="#api-docgeneratorsettingso" title="Permanent link">&para;</a></h4>
+<h4 id="api-docgeneratorsettingso">中文 API 脚本文档结构（默认提供的 DocGeneratorSettingSO）</h4>
 <ol>
 <li>类型名</li>
 <li>类型类别（如 class、struct，是否静态 / 抽象）</li>
@@ -1442,67 +1438,81 @@
 <li>字段按 “声明的字段”“继承的字段” 分类，展示字段签名及注释。</li>
 <li>额外说明标识符，持久保留在标识符后的自定义内容（增量生成时不覆盖）。</li>
 </ol>
-<h3 id="_8">选择类型来源<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h3 id="_8">选择类型来源</h3>
 <p>在 “类型来源” 选项中，选择需要生成文档的目标范围。</p>
-<h4 id="singletype">SingleType 单个目标类型<a class="headerlink" href="#singletype" title="Permanent link">&para;</a></h4>
-<p><img src="./ScriptDocGenerator 使用指南.assets/单类型模式未选择.png" style="zoom:40%;" /></p>
-<p><img src="./ScriptDocGenerator 使用指南.assets/单类型模式选择并分析.png" style="zoom:40%;" /></p>
-<h4 id="multipletypes">MultipleTypes 多个类型<a class="headerlink" href="#multipletypes" title="Permanent link">&para;</a></h4>
+<h4 id="singletype">SingleType 单个目标类型</h4>
+<p>&lt;img src="&lt;\&lt;/\&lt;../ScriptDocGenerator 使用指南.assets/单类型模式未选择.png/&gt;&gt;&gt;" style="zoom:40%;" /&gt;</p>
+<p>&lt;img src="&lt;\&lt;/\&lt;../ScriptDocGenerator 使用指南.assets/单类型模式选择并分析.png/&gt;&gt;&gt;" style="zoom:40%;" /&gt;</p>
+<h4 id="multipletypes">MultipleTypes 多个类型</h4>
 <p>多类型模式有两种类型提供方式。</p>
 <p>第一种是 TypeCacheSO 资源，内部有一个类型列表，可以把多个类型的列表持久化存储，比如某个命名空间下的类，之后如果同时修改了多个类，那么可以直接使用这个资源文件，重新生成这些类的脚本文档。</p>
 <p>同时，在选择了 TypeCacheSO 资源后，临时的 Type 列表将会隐藏。</p>
-<p><img src="./ScriptDocGenerator 使用指南.assets/多类型模式TypeCache资源演示.png" style="zoom:40%;" /></p>
+<p>&lt;img src="&lt;\&lt;/\&lt;./ScriptDocGenerator 使用指南.assets/多类型模式TypeCache资源演示.png/&gt;&gt;&gt;" style="zoom:40%;" /&gt;</p>
 <p>其中一种是临时的列表，逐个添加类型。</p>
 <p>提供了快捷生成 TypeCacheSO 的解决方案，首次添加列表后，点击保存为 SO 资源，可以一键把该临时列表存储到一个新的 TypeCacheSO 中去。</p>
 <p>另外，可以自定义新生成 TypeCacheSO 资源的文件夹，点击自定义资源存储位置，即可出现路径设置。点击完成设置后，将会隐藏。</p>
-<p><img src="./ScriptDocGenerator 使用指南.assets/多类型模式临时列表.png" style="zoom:40%;" /></p>
-<p><img src="./ScriptDocGenerator 使用指南.assets/多类型模式一键保存为TypeCacheSO.png" style="zoom:40%;" /></p>
-<h4 id="singleassembly">SingleAssembly 单个程序集<a class="headerlink" href="#singleassembly" title="Permanent link">&para;</a></h4>
+<p>&lt;img src="&lt;\&lt;/\&lt;../ScriptDocGenerator 使用指南.assets/多类型模式临时列表.png/&gt;&gt;&gt;" style="zoom:40%;" /&gt;</p>
+<p>&lt;img src="&lt;\&lt;/\&lt;../ScriptDocGenerator 使用指南.assets/多类型模式一键保存为TypeCacheSO.png/&gt;&gt;&gt;" style="zoom:40%;" /&gt;</p>
+<h4 id="singleassembly">SingleAssembly 单个程序集</h4>
 <p>单程序集和多类型模式本质一样，不过是选择程序集后，工具将会收集该程序集中包含的所有的类。</p>
-<p><img src="./ScriptDocGenerator 使用指南.assets/单程序集模式演示.png" style="zoom:40%;" /></p>
-<h3 id="_9">分析类型<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>&lt;img src="&lt;\&lt;/\&lt;../ScriptDocGenerator 使用指南.assets/单程序集模式演示.png/&gt;&gt;&gt;" style="zoom:40%;" /&gt;</p>
+<h3 id="_9">分析类型</h3>
 <p>点击按钮分析设置的 Type 类型。</p>
 <p>可以在类型分析数据结果中查看具体信息。</p>
-<p><img src="./ScriptDocGenerator 使用指南.assets/分析结果演示.png" style="zoom:40%;" /></p>
-<h3 id="_10">生成文档<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>&lt;img src="&lt;\&lt;/\&lt;../ScriptDocGenerator 使用指南.assets/分析结果演示.png/&gt;&gt;&gt;" style="zoom:40%;" /&gt;</p>
+<h3 id="_10">生成文档</h3>
 <p>在分析类型完成后，将会自动显示生成按钮，点击后，执行生成文档。</p>
-<h4 id="singletype_1">SingleType 单类型<a class="headerlink" href="#singletype_1" title="Permanent link">&para;</a></h4>
+<h4 id="singletype_1">SingleType 单类型</h4>
 <ol>
 <li>若目标类型已标记为 “过时”，会提示确认是否继续生成。</li>
 <li>生成文档后，自动用默认程序打开文档，并刷新 Unity 资源面板</li>
 <li>若目标路径已存在同名文档，会提示是否覆盖（覆盖时保留 “## 额外说明” 后的内容）</li>
 </ol>
-<h4 id="multipletypes-singleassembly">MultipleTypes 和 SingleAssembly<a class="headerlink" href="#multipletypes-singleassembly" title="Permanent link">&para;</a></h4>
+<h4 id="multipletypes-singleassembly">MultipleTypes 和 SingleAssembly</h4>
 <p>生成文档后，将自动打开存放文档的文件夹路径。</p>
-<h3 id="_11">文档结果预览<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
-<p><img src="./ScriptDocGenerator 使用指南.assets/TypeAnalyzerUtility文档预览一.png" alt="TypeAnalyzerUtility文档预览一" style="zoom:50%;" /></p>
-<p><img src="./ScriptDocGenerator 使用指南.assets/TypeAnalyzerUtility文档预览二.png" alt="TypeAnalyzerUtility文档预览二" style="zoom:50%;" /></p>
-<p><img src="./ScriptDocGenerator 使用指南.assets/TypeAnalyzerUtility文档预览三.png" alt="TypeAnalyzerUtility文档预览三" style="zoom:50%;" /></p>
-<h3 id="rider">Rider 格式化设置推荐<a class="headerlink" href="#rider" title="Permanent link">&para;</a></h3>
-<h4 id="_12">设置脚本文件布局<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
-<p>推荐使用**带区域的默认值**。</p>
-<p><img src="./ScriptDocGenerator 使用指南.assets/Rider-Unity文件布局.png" alt="Rider-Unity文件布局" style="zoom:50%;" /></p>
-<h4 id="_13">快捷键<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<h3 id="_11">文档结果预览</h3>
+<p>&lt;img src="&lt;\&lt;/\&lt;../ScriptDocGenerator 使用指南.assets/TypeAnalyzerUtility文档预览一.png/&gt;&gt;&gt;" alt="TypeAnalyzerUtility文档预览一" style="zoom:50%;" /&gt;</p>
+<p>&lt;img src="&lt;\&lt;/\&lt;../ScriptDocGenerator 使用指南.assets/TypeAnalyzerUtility文档预览二.png/&gt;&gt;&gt;" alt="TypeAnalyzerUtility文档预览二" style="zoom:50%;" /&gt;</p>
+<p>&lt;img src="&lt;\&lt;/\&lt;../ScriptDocGenerator 使用指南.assets/TypeAnalyzerUtility文档预览三.png/&gt;&gt;&gt;" alt="TypeAnalyzerUtility文档预览三" style="zoom:50%;" /&gt;</p>
+<h3 id="rider">Rider 格式化设置推荐</h3>
+<h4 id="_12">设置脚本文件布局</h4>
+<p>推荐使用<strong>带区域的默认值</strong>。</p>
+<p>&lt;img src="&lt;\&lt;/\&lt;../ScriptDocGenerator 使用指南.assets/Rider-Unity文件布局.png/&gt;&gt;&gt;" alt="Rider-Unity文件布局" style="zoom:50%;" /&gt;</p>
+<h4 id="_13">快捷键</h4>
 <p>InteliJ 默认快捷键：Mac = <code>shift+option+command+L</code>，打开重新设置代码格式选择面板，没有自定义格式的话，选择完全清理即可。</p>
-<p><img src="./ScriptDocGenerator 使用指南.assets/重新设置代码格式.png" alt="重新设置代码格式" style="zoom:50%;" /></p>
-<h3 id="_14">已知限制<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>&lt;img src="&lt;\&lt;/\&lt;../ScriptDocGenerator 使用指南.assets/重新设置代码格式.png/&gt;&gt;&gt;" alt="重新设置代码格式" style="zoom:50%;" /&gt;</p>
+<h3 id="_14">已知限制</h3>
 <ol>
 <li>不支持分析 <code>unsafe</code> 代码。</li>
 <li>不支持获取实例成员的默认值。</li>
 </ol>
-<h3 id="_15">常见问题<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<h3 id="_15">常见问题</h3>
 <p>Q：生成的文档缺少某些成员？</p>
 <p>A：工具只解析公共构造函数，以及用户定义的成员，已经剔除程序集自动生成的成员。</p>
 <p>Q：如何自定义生成的脚本文档格式？</p>
 <p>A：声明一个继承自 <code>DocGeneratorSettingSO</code> 的类，实现 <code>GetGeneratedDoc</code> 方法，更换文档生成设置资源文件。</p>
 
 
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">Script Doc Generator</span>
+      
+    
+  </nav>
 
 
 
 
 
 
+
+
+  
+  
 
 
 
@@ -1534,7 +1544,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../../../%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/CHANGELOG/" class="md-footer__link md-footer__link--prev" aria-label="上一页: CHANGELOG">
+          <a href="../../../Instructions/CHANGELOG/" class="md-footer__link md-footer__link--prev" aria-label="上一页: CHANGELOG">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>

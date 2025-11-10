@@ -7,7 +7,7 @@ copyright: Copyright &copy; 2025 Yuumix
 # Repository
 repo_name: Odin Toolkits
 repo_url: https://github.com/yuumixcode/OdinToolkits-For-Unity
-edit_uri: edit/main/docs/
+
 # Configuration
 theme:
   name: material
@@ -51,19 +51,15 @@ theme:
       toggle:
         icon: lucide/moon-star
         name: 遵循系统偏好
+  logo: https://cdn.jsdelivr.net/gh/yuumixcode/OdinToolkitsDocumentation@main/cdn-assets/logo-color-noshadow.webp
   favicon: assets/zensical.png
-  logo: assets/zensical.svg
   icon:  
     repo: lucide/github   
     tag:
       default: lucide/hash
-  font: false
-  #   text: Inter
-  #   code: Jetbrains Mono
-
-# # Plugins
-# plugins:
-#   - search
+  font:
+    text: Noto Sans Meroitic
+    code: JetBrains Mono
 
 extra:
   social:
@@ -77,7 +73,8 @@ extra:
 # Additional configuration
 extra_css:
   - assets/stylesheets/zensical-official-extra.css
-  - assets/stylesheets/fonts.css
+  # - assets/stylesheets/fonts.css
+  - assets/stylesheets/readthedocs.css
 
 extra_javascript:
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
@@ -94,6 +91,7 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.tabbed:
       alternate_style: true
+      combine_header_slug: true
       slugify: !!python/object/apply:pymdownx.slugs.slugify
         kwds:
           case: lower
@@ -122,7 +120,7 @@ markdown_extensions:
 nav:
   - README: 
     - README: README.md
-    - CHANGELOG: 说明文档/CHANGELOG.md
+    - CHANGELOG: Instructions/CHANGELOG.md
   - 使用手册:
     - Script Doc Generator:
-      - 使用指南: Manuals/ScriptDocGenerator/ScriptDocGenerator 使用指南.md
+      - 使用指南: Manuals/ScriptDocGenerator/ScriptDocGeneratorUsageGuide.md

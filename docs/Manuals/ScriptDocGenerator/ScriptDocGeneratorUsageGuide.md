@@ -1,3 +1,9 @@
+---
+tags:
+  - Script Doc Generator
+slug: script-doc-generator-usage-guide
+---
+
 # Script Doc Generator 使用指南
 
 ## 工具简介
@@ -16,7 +22,7 @@ Script Doc Generator 是 Odin Toolkits For Unity 的核心模块之一，用于�
 
 Script Doc Generator 主要依靠 `Reflection` 反射。注释采用的是读取 `[Summary("xxx")]` 的值的方案。因此，要求源代码中给需要生成注释的成员添加 `[Summary]` 。
 
-<img src="./ScriptDocGenerator 使用指南.assets/Summary源代码演示.png" alt="Summary源代码演示" style="zoom:50%;" />
+<p><img src="../ScriptDocGenerator 使用指南.assets/Summary源代码演示.png" alt="Summary源代码演示" style="zoom:50%;" /><br /></p>
 
 #### SummaryProcessorMenuItems
 
@@ -28,19 +34,19 @@ Script Doc Generator 主要依靠 `Reflection` 反射。注释采用的是读取
 2. Replace SummaryAttribute。读取 XML 注释中的 `<summary>` 内容，删除 XML 的 `<summary>` 内容，然后添加 `[Summary("xxx")]` 特性到成员上方。
 3. Remove SummaryAttribute。移除选择的脚本源代码中的 `[Summary("xxx")]` 特性。
 
-<img src="./ScriptDocGenerator 使用指南.assets/右键菜单 Summary.png" alt="右键菜单 Summary" style="zoom:55%;" />
+<img src="../ScriptDocGenerator 使用指南.assets/右键菜单 Summary.png" alt="右键菜单 Summary" style="zoom:55%;" />
 
 为了正确添加 `[Summary]` 特性，在执行操作前，推荐使用 IDE 对代码进行格式化。最好设置为特性和成员永不在同一行，以 Rider 举例。
 
-<img src="./ScriptDocGenerator 使用指南.assets/Rider设置特性永不在同一行.png" alt="Rider设置特性永不在同一行" style="zoom:40%;" />
+<img src="../ScriptDocGenerator 使用指南.assets/Rider设置特性永不在同一行.png" alt="Rider设置特性永不在同一行" style="zoom:40%;" />
 
 ### 打开工具面板
 
 通过 Unity 编辑器菜单打开：Tools/Odin Toolkits/Script Doc Generator。
 
-<img src="./ScriptDocGenerator 使用指南.assets/ScriptDocGenerator菜单路径图.png" style="zoom:60%;" />
+<img src="../ScriptDocGenerator 使用指南.assets/ScriptDocGenerator菜单路径图.png" style="zoom:60%;" />
 
-<img src="./ScriptDocGenerator 使用指南.assets/脚本文档生成器菜单图.png" alt="脚本文档生成器菜单路径" style="zoom:40%;" />
+<img src="../ScriptDocGenerator 使用指南.assets/脚本文档生成器菜单图.png" alt="脚本文档生成器菜单路径" style="zoom:40%;" />
 
 ### 设置文档保存路径
 
@@ -50,7 +56,7 @@ Script Doc Generator 主要依靠 `Reflection` 反射。注释采用的是读取
 - 支持拖拽文件夹到输入框快速设置
 - 若路径不存在，生成时会提示自动创建文件夹
 
-<img src="./ScriptDocGenerator 使用指南.assets/自动路径补全提示.png" style="zoom:40%;" />
+<img src="<\</\<../ScriptDocGenerator 使用指南.assets/自动路径补全提示.png/\>\>>" style="zoom:40%;" />
 
 ### 文档生成器设置
 
@@ -86,9 +92,9 @@ Script Doc Generator 主要依靠 `Reflection` 反射。注释采用的是读取
 
 #### SingleType 单个目标类型
 
-<img src="./ScriptDocGenerator 使用指南.assets/单类型模式未选择.png" style="zoom:40%;" />
+<img src="<\</\<../ScriptDocGenerator 使用指南.assets/单类型模式未选择.png/\>\>>" style="zoom:40%;" />
 
-<img src="./ScriptDocGenerator 使用指南.assets/单类型模式选择并分析.png" style="zoom:40%;" />
+<img src="<\</\<../ScriptDocGenerator 使用指南.assets/单类型模式选择并分析.png/\>\>>" style="zoom:40%;" />
 
 #### MultipleTypes 多个类型
 
@@ -98,7 +104,7 @@ Script Doc Generator 主要依靠 `Reflection` 反射。注释采用的是读取
 
 同时，在选择了 TypeCacheSO 资源后，临时的 Type 列表将会隐藏。
 
-<img src="./ScriptDocGenerator 使用指南.assets/多类型模式TypeCache资源演示.png" style="zoom:40%;" />
+<img src="<\</\<./ScriptDocGenerator 使用指南.assets/多类型模式TypeCache资源演示.png/\>\>>" style="zoom:40%;" />
 
 其中一种是临时的列表，逐个添加类型。
 
@@ -106,17 +112,15 @@ Script Doc Generator 主要依靠 `Reflection` 反射。注释采用的是读取
 
 另外，可以自定义新生成 TypeCacheSO 资源的文件夹，点击自定义资源存储位置，即可出现路径设置。点击完成设置后，将会隐藏。
 
-<img src="./ScriptDocGenerator 使用指南.assets/多类型模式临时列表.png" style="zoom:40%;" />
+<img src="<\</\<../ScriptDocGenerator 使用指南.assets/多类型模式临时列表.png/\>\>>" style="zoom:40%;" />
 
-<img src="./ScriptDocGenerator 使用指南.assets/多类型模式一键保存为TypeCacheSO.png" style="zoom:40%;" />
+<img src="<\</\<../ScriptDocGenerator 使用指南.assets/多类型模式一键保存为TypeCacheSO.png/\>\>>" style="zoom:40%;" />
 
-####  SingleAssembly 单个程序集
+#### SingleAssembly 单个程序集
 
 单程序集和多类型模式本质一样，不过是选择程序集后，工具将会收集该程序集中包含的所有的类。
 
-<img src="./ScriptDocGenerator 使用指南.assets/单程序集模式演示.png" style="zoom:40%;" />
-
-
+<img src="<\</\<../ScriptDocGenerator 使用指南.assets/单程序集模式演示.png/\>\>>" style="zoom:40%;" />
 
 ### 分析类型
 
@@ -124,7 +128,7 @@ Script Doc Generator 主要依靠 `Reflection` 反射。注释采用的是读取
 
 可以在类型分析数据结果中查看具体信息。
 
-<img src="./ScriptDocGenerator 使用指南.assets/分析结果演示.png" style="zoom:40%;" />
+<img src="<\</\<../ScriptDocGenerator 使用指南.assets/分析结果演示.png/\>\>>" style="zoom:40%;" />
 
 ### 生成文档
 
@@ -142,11 +146,11 @@ Script Doc Generator 主要依靠 `Reflection` 反射。注释采用的是读取
 
 ### 文档结果预览
 
-<img src="./ScriptDocGenerator 使用指南.assets/TypeAnalyzerUtility文档预览一.png" alt="TypeAnalyzerUtility文档预览一" style="zoom:50%;" />
+<img src="<\</\<../ScriptDocGenerator 使用指南.assets/TypeAnalyzerUtility文档预览一.png/\>\>>" alt="TypeAnalyzerUtility文档预览一" style="zoom:50%;" />
 
-<img src="./ScriptDocGenerator 使用指南.assets/TypeAnalyzerUtility文档预览二.png" alt="TypeAnalyzerUtility文档预览二" style="zoom:50%;" />
+<img src="<\</\<../ScriptDocGenerator 使用指南.assets/TypeAnalyzerUtility文档预览二.png/\>\>>" alt="TypeAnalyzerUtility文档预览二" style="zoom:50%;" />
 
-<img src="./ScriptDocGenerator 使用指南.assets/TypeAnalyzerUtility文档预览三.png" alt="TypeAnalyzerUtility文档预览三" style="zoom:50%;" />
+<img src="<\</\<../ScriptDocGenerator 使用指南.assets/TypeAnalyzerUtility文档预览三.png/\>\>>" alt="TypeAnalyzerUtility文档预览三" style="zoom:50%;" />
 
 ### Rider 格式化设置推荐
 
@@ -154,13 +158,13 @@ Script Doc Generator 主要依靠 `Reflection` 反射。注释采用的是读取
 
 推荐使用**带区域的默认值**。
 
-<img src="./ScriptDocGenerator 使用指南.assets/Rider-Unity文件布局.png" alt="Rider-Unity文件布局" style="zoom:50%;" />
+<img src="<\</\<../ScriptDocGenerator 使用指南.assets/Rider-Unity文件布局.png/\>\>>" alt="Rider-Unity文件布局" style="zoom:50%;" />
 
 #### 快捷键
 
 InteliJ 默认快捷键：Mac = `shift+option+command+L`，打开重新设置代码格式选择面板，没有自定义格式的话，选择完全清理即可。
 
-<img src="./ScriptDocGenerator 使用指南.assets/重新设置代码格式.png" alt="重新设置代码格式" style="zoom:50%;" />
+<img src="<\</\<../ScriptDocGenerator 使用指南.assets/重新设置代码格式.png/\>\>>" alt="重新设置代码格式" style="zoom:50%;" />
 
 ### 已知限制
 
@@ -176,4 +180,3 @@ A：工具只解析公共构造函数，以及用户定义的成员，已经剔�
 Q：如何自定义生成的脚本文档格式？
 
 A：声明一个继承自 `DocGeneratorSettingSO` 的类，实现 `GetGeneratedDoc` 方法，更换文档生成设置资源文件。
-
