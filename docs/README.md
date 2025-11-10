@@ -1,5 +1,5 @@
 ---
-icon: lucide/rocket
+comments: true
 ---
 
 # README

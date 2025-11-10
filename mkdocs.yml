@@ -7,7 +7,6 @@ copyright: Copyright &copy; 2025 Yuumix
 # Repository
 repo_name: Odin Toolkits
 repo_url: https://github.com/yuumixcode/OdinToolkits-For-Unity
-edit_uri: edit/main/docs/
 
 # Configuration
 theme:
@@ -15,10 +14,8 @@ theme:
   favicon: assets/logo-color-noshadow.png
   logo: assets/logo-color-noshadow.png
   icon:
-    repo: lucide/github   
-    tag:
-      default: lucide/hash
-  # custom_dir: overrides
+    repo: lucide/github
+  custom_dir: overrides
   language: zh
   features:
     - announce.dismiss
@@ -58,11 +55,7 @@ theme:
       toggle:
         icon: lucide/moon-star
         name: 遵循系统偏好
-
-
-  font:
-    text: Noto Sans Meroitic
-    code: JetBrains Mono
+  font: false
 
 extra:
   social:
@@ -76,7 +69,7 @@ extra:
 # Additional configuration
 extra_css:
   - assets/stylesheets/zensical-official-extra.css
-  # - assets/stylesheets/fonts.css
+  - assets/stylesheets/fonts.css
   - assets/stylesheets/readthedocs.css
 
 extra_javascript:
@@ -95,6 +88,10 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
       combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - toc:
       slugify: !!python/object/apply:pymdownx.slugs.slugify
         kwds:
           case: lower
