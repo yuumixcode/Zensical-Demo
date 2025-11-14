@@ -1,4 +1,5 @@
 ---
+icon: lucide/bug
 tags:
   - odin-inspector
 authors: 
