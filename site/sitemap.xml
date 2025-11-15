@@ -94,9 +94,21 @@
         <loc>https://www.odintoolkits.cn/ScriptingAPI/OdinToolkits/ScriptDocGenerator/YuumixDefaultAnalysisDataFactory/</loc>
       </url>
       <url>
-        <loc>https://www.odintoolkits.cn/Artical/CSharp-SOLID/</loc>
+        <loc>https://www.odintoolkits.cn/Artical/csharp-SOLID/</loc>
       </url>
       <url>
-        <loc>https://www.odintoolkits.cn/OdinInspector/AboutOdinInspector/</loc>
+        <loc>https://www.odintoolkits.cn/Artical/csharp-architecture-design/</loc>
+      </url>
+      <url>
+        <loc>https://www.odintoolkits.cn/Artical/serializereference-attribute/</loc>
+      </url>
+      <url>
+        <loc>https://www.odintoolkits.cn/Artical/OdinInspector/visual-designer/</loc>
+      </url>
+      <url>
+        <loc>https://www.odintoolkits.cn/Artical/OdinInspector/auto-open-gettingstarted/</loc>
+      </url>
+      <url>
+        <loc>https://www.odintoolkits.cn/OdinInspector-license/</loc>
       </url>
 </urlset>

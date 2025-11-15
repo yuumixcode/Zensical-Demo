@@ -16,6 +16,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.3 - alpha] - 2025-11-15
+
+### Added
+
+- 新增工具 MenuItemViewer，一键查看项目内所有的菜单项，收录到 Tool Packages 模块。
+- 新增 Script Doc Generator 工具生成文档时，支持保留 Front Matter 部分，目前支持 "---" 和 "+++" 格式的 Front Matter。
+
+### Changed
+
+- 修改菜单项，使 Odin Toolkits 和 Odin 菜单项更加接近，减少其他插件的菜单项插入到两者之间的可能性，避免用户体验产生割裂感。
+- 优化 Odin Toolkits 导出设置，将 `OdinToolkitsEditorInfo` 版本信息同步到导出设置中，防止再次出现滞后的问题。
+- 优化 Script Doc Generator 模块，将可视化面板与生成文档逻辑代码分离，`ScriptDocGeneratorVisualPanelSO` 负责接收用户配置输入和行为输入，`ScriptDocGeneratorController` 负责处理业务逻辑，生成文档。
+
+### Fixed
+
+- 修复 `OdinToolkitsEditorInfo` 中版本滞后的问题。
+- 修复 Script Doc Generator 生成文档时，首次生成的文档包含增量标识符，之后修改文档生成设置，关闭生成增量标识符后，覆盖原有文档造成用户自定义内容丢失的问题。如果原有文档包含增量标识符和自定义内容，即使此时文档生成设置中关闭了生成增量标识符，新生成的相同文档覆盖时仍然会保留自定义内容.
+- 修复 Community 的 SwitchButtonAttribute 模块的路径问题。
+
 ## [0.5.2 - alpha] - 2025-11-12
 
 ### Fixed
